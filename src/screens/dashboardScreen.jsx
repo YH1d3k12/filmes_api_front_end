@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Requester from "../data/requester.js";
+import Table from "../components/table.jsx";
 
 
 export default function DashboardScreen() {
@@ -39,15 +40,17 @@ export default function DashboardScreen() {
     // If given dependencies, useEffect is executed every time a value is changed.
     }, []); 
 
+    // Defines the column headings and the values to be displayed.
+    const table = [
+        { heading: "ID", rowName: "id"},
+        { heading: "Year", rowName: "year" },
+        { heading: "Title", rowName: "title" },
+        { heading: "Winner?", rowName: "winner"}
+    ];
+
     return (
         <div className="dashboardScreen">
-            <h2>Filmes:</h2>
-            {movieData && (
-                <ul>{movieData.map(movie => (
-                    <li key={movie.id}>{movie.title}</li>
-                ))}
-                </ul>
-            )}
+            <Table data={movieData} table={table}></Table>
         </div>
     );
 };
