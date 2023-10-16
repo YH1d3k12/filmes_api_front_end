@@ -1,0 +1,35 @@
+:root {
+    --list-screen-wrapper-background-color: #d2d2d2;
+
+    --list-screen-button-container-background-color: #f4f4f4;
+    --list-screen--buttons-container-border-color: #d2d2d2;
+}
+
+.list-screen {
+    height: 100%;
+    width: 100%;
+
+    padding: 20px;
+}
+
+.list-screen-wrapper {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+
+    border: solid 1px var(--list-screen-wrapper-background-color);
+}
+
+
+.dashboard-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 20px;
+    border: solid 1px var(--list-screen--buttons-container-border-color);
+
+    background-color: var(--list-screen-button-container-background-color);
+}

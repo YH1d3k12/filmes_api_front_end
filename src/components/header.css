@@ -1,4 +1,10 @@
+:root {
+    --navigation-container-background-color: #f8f9fa;
+}
+
 .navigation-container {
     height: 100%;
     width: 20%;
+
+    background-color: var(--navigation-container-background-color);
 }

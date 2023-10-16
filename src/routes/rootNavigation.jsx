@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Body from "../screens/body.jsx";
+import ListScreen from "../screens/listScreen.jsx";
 import DashboardScreen from "../screens/dashboardScreen.jsx";
-import MovieListScreen from "../screens/movieListScreen.jsx";
 
 
 /**
@@ -22,8 +22,8 @@ export default function RootNavigation() {
                       	The following components are child screens rendered within the Outlet of the Body component.
                       	These components represent specific views or sections of the application.
                     */}
-					<Route path="/" element={<DashboardScreen />} />
-					<Route path="/movies" element={<MovieListScreen />} />
+					<Route path="/" element={<ListScreen />} />
+					<Route path="/movies" element={<DashboardScreen />} />
 				</Route>
 			</Routes>
 	  </BrowserRouter>
