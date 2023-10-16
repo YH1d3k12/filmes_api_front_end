@@ -1,5 +1,7 @@
 :root
 {
+    --table-cell-border-color: #d2d2d2;
+
     --table-header-background-color:#f4f4f4;
     --table-header-color:#333333;
 
@@ -23,13 +25,14 @@
     
     font-size: 0.8rem;
     font-weight: 700;
-    text-align: left;
+    text-align: center;
 }
 
 .content-table th,
 .content-table td
 {
     padding: 8px 10px;
+    border: solid 1px var(--table-cell-border-color);
 }
 
 .content-table tbody tr
