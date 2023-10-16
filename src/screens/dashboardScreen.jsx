@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import Requester from "../data/requester.js";
 import Table from "../components/table.jsx";
 
+import "./dashboardScreen.css";
+
 
 export default function DashboardScreen() {
     // Defines movieData as an empty array.
@@ -79,7 +81,7 @@ export default function DashboardScreen() {
         return pageNumbers;
     };
     const renderNavigationButtons = () => (
-        <div>
+        <div className="dashboard-button-container">
             <button onClick={() => handlePageChange(0)} disabled={currentPage === 0}>
                 {"<<"}
             </button>
@@ -106,6 +108,7 @@ export default function DashboardScreen() {
 
     return (
         <div className="dashboardScreen">
+            <h1>List Movies</h1>
             <Table data={movieData} table={table}></Table>
             {renderNavigationButtons()}
         </div>
