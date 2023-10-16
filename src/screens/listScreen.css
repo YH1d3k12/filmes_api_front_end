@@ -3,6 +3,11 @@
 
     --list-screen-button-container-background-color: #f4f4f4;
     --list-screen--buttons-container-border-color: #d2d2d2;
+
+    --list-screen-button-background-color: #f4f4f4;
+
+    --list-screen-button-hover-background-color: #007ad9;
+    --list-screen-button-hover-color: #e9f0f5;
 }
 
 .list-screen {
@@ -20,7 +25,6 @@
     border: solid 1px var(--list-screen-wrapper-background-color);
 }
 
-
 .dashboard-button-container {
     display: flex;
     flex-direction: row;
@@ -28,8 +32,18 @@
     justify-content: center;
 
     width: 100%;
-    padding: 20px;
     border: solid 1px var(--list-screen--buttons-container-border-color);
 
     background-color: var(--list-screen-button-container-background-color);
+}
+
+.dashboard-button-container button {
+    padding: 12px;
+
+    background-color: var(--list-screen-button-container-background-color);
+}
+
+.dashboard-button-container button:hover {
+    background-color: var(--list-screen-button-hover-background-color);
+    color: var(--list-screen-button-hover-color);
 }
