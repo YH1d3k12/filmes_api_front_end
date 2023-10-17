@@ -1,11 +1,12 @@
 :root {
-    --table-cell-border-color: #d2d2d2;
+    --table-cell-border-color: #c4c4c4;
 
     --table-header-background-color: #f4f4f4;
     --table-header-color: #333333;
 
     --table-row-primary-background-color: #ffffff;
     --table-row-secundary-background-color: #f4f4f4;
+    --table-row-color: #333333;
 }
 
 .content-table {
@@ -39,6 +40,7 @@
 
 .content-table tbody tr {
     background-color: var(--table-row-primary-background-color);
+    color: var(--table-row-color);
     border-bottom: 1px solid #dddddd;
 }
 

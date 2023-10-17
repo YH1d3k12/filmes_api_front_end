@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Requester from "../data/requester.js";
 import Table from "../components/table.jsx";
-import NavigationButtons from "../components/navigation_buttons.jsx";
+import NavigationButtons from "../components/navigationButtons.jsx";
 import FilterByYear from "../components/filterByYear.jsx";
 import SearchByWinner from "../components/searchByWinner.jsx";
 
