@@ -12,6 +12,7 @@ export default function ListScreen() {
     const [movieData, setMovieData] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
+    const [filterYear, setFilterYear] = useState("");
 
     // When the component is loaded useEffect is executed.
     useEffect(() => {
@@ -50,11 +51,10 @@ export default function ListScreen() {
         if (newPage >= 0 && newPage < totalPages) {
             setCurrentPage(newPage);
         } else if (newPage < 0) {
-            // Goes to the first page if newPage is less than zero.
             setCurrentPage(0);
         } else {
-            // Goes to the last page if newPage is greater or equal than totalPages.
-            setCurrentPage(totalPages - 1);
+            const filteredTotalPages = Math.ceil(filteredData.length / 15);
+            setCurrentPage(filteredTotalPages - 1);
         }
     };
 
@@ -67,10 +67,19 @@ export default function ListScreen() {
       );
 
     const CelYear = () => {
+        const handleYearChange = (e) => {
+            setFilterYear(e.target.value);
+        };
+    
         return (
             <div>
                 <p>Year</p>
-                <input className="list-filter" placeholder="Filter by year"></input>
+                <input 
+                    className="list-filter" 
+                    placeholder="Filter by year"
+                    value={filterYear}
+                    onChange={handleYearChange}
+                />
             </div>
         );
     };
@@ -88,6 +97,11 @@ export default function ListScreen() {
         );
     };
 
+    const filteredData = movieData.filter(item => {
+        // Se o filtroYear estiver vazio ou o ano do filme coincidir com o filtro
+        return filterYear === "" || item.year.toString().includes(filterYear);
+    });
+
     // Defines the column headings and the values to be displayed.
     const table = [
         { heading: 'ID', rowName: 'id' },
@@ -100,7 +114,7 @@ export default function ListScreen() {
         <div className="list-screen">
             <div className="list-screen-wrapper">
                 <h1>List Movies</h1>
-                <Table data={movieData} table={table}></Table>
+                <Table data={filteredData} table={table}></Table>
                 {renderNavigationButtons()}
             </div>
         </div>
