@@ -3,6 +3,10 @@ Este projeto é um desafio proposto, referente a leitura de indicados e vencedor
 
 Sendo requerido duas views (dashboard e lista de todos os filmes), que renderizem os dados vindos da API disponibilizada em https://tools.texoit.com/backend-java/api/movies.
 
+## 🎇 Visite o Site Hospedado no Github Pages 🎇:
+
+link: https://yh1d3k12.github.io/filmes_api_front_end
+
 ## 🛠 Guia de Instalação Manual 🛠: 
 
 #### 1. Clonagem do Repositório
