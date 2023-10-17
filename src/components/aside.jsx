@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./aside.css"
 
@@ -11,7 +11,7 @@ function Aside()
             <navbar>
                 <ul>
                     <li><a onClick={() => navigate("/")}>Dashboard</a></li>
-                    <li><a onClick={() => navigate("/movies")}>List</a></li>
+                    <li><a onClick={() => navigate("/list")}>List</a></li>
                 </ul>
             </navbar>
             
