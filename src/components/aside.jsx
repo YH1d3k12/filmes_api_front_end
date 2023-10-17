@@ -8,12 +8,12 @@ function Aside()
     
     return (
         <aside className="navigation-container">
-            <navbar>
+            <nav>
                 <ul>
                     <li><a onClick={() => navigate("/")}>Dashboard</a></li>
                     <li><a onClick={() => navigate("/list")}>List</a></li>
                 </ul>
-            </navbar>
+            </nav>
             
         </aside>
     );

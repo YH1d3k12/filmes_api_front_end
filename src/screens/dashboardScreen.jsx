@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Requester from "../data/requester";
 import Table from "../components/table"
+import SearchByYear from "../components/searchByYear";
 
 import "./dashboardScreen.css";
 
@@ -96,23 +97,27 @@ export default function MovieListScreen() {
         { heading: "Title", rowName: "title" }
     ];
 
+    const handleSearchButton = () => {
+        
+    }
+
     // When the component is loaded useEffect is executed.
     useEffect(() => {
         // Calls fetchData when fully loaded.
         fetchData();
-    }, []);
+    }, [filterYear]);
     // Second parameter of useEffect is a dependency list, if empty, the method is executed once.
     // If given dependencies, useEffect is executed every time a value is changed.
 
     return (
         <div className="dashboard-screen">
             <div className="dashboard-wrapper">
-                <div className="dashboard-table">
+                <div className="dashboard-screen-table">
                     <h2>List years with multiple winners</h2>
                     <Table data={goldenYearsData} table={tableGoldenYears}></Table>
                 </div>
 
-                <div className="dashboard-table">
+                <div className="dashboard-screen-table">
                     <h2>Producers with longest and shortest interval between wins</h2>
                     <h3>Maximum</h3>
                     <Table data={maxIntervalData} table={tableMaxInterval}></Table>
@@ -121,16 +126,17 @@ export default function MovieListScreen() {
                 </div>
             </div>
             <div className="dashboard-wrapper">
-                <div className="dashboard-table">
+                <div className="dashboard-screen-table">
                     <h2>Top 3 studios with winners</h2>
                     <Table data={topWinsData} table={tableTopWins}></Table>
                 </div>
-
-                <div className="dashboard-table">
+                <div className="dashboard-screen-table">
                     <h2>List movie winners by year</h2>
+                    <SearchByYear value={filterYear} onChange={setFilterYear}></SearchByYear>
                     <Table data={winnersData} table={tableSearch}></Table>
                 </div>
             </div>
+
         </div>
     );
 };
