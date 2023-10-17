@@ -1,0 +1,18 @@
+.dashboard-screen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    height: 100%;
+    width: 100%;
+}
+
+.dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 48%; 
+}
+
+.dashboard-table {
+}

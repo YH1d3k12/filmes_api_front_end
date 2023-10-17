@@ -1,4 +1,4 @@
-import React, { useDebugValue, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Requester from "../data/requester.js";
 import Table from "../components/table.jsx";
@@ -7,6 +7,7 @@ import SearchByYear from "../utilities/searchByYear.js";
 import SearchByWinner from "../utilities/searchByWinner.js";
 
 import "./listScreen.css";
+
 
 export default function ListScreen() {
     // Defines movieData as an empty array.
