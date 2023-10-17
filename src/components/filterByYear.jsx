@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useDebounce from "./useDebounce"
 
 
-const SearchByYear = ({ value, onChange }) => {
+const FilterByYear = ({ value, onChange }) => {
     const [filterYear, setFilterYear] = useState(value);
     const debouncedChange = useDebounce(onChange, 500);
 
@@ -23,4 +23,4 @@ const SearchByYear = ({ value, onChange }) => {
 };
 
 
-export default SearchByYear;
+export default FilterByYear;

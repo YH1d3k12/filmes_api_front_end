@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Requester from "../data/requester";
 import Table from "../components/table"
+import SearchByYear from "../components/searchByYear";
 
 import "./dashboardScreen.css";
 
@@ -96,11 +97,15 @@ export default function MovieListScreen() {
         { heading: "Title", rowName: "title" }
     ];
 
+    const handleSearchButton = () => {
+        
+    }
+
     // When the component is loaded useEffect is executed.
     useEffect(() => {
         // Calls fetchData when fully loaded.
         fetchData();
-    }, []);
+    }, [filterYear]);
     // Second parameter of useEffect is a dependency list, if empty, the method is executed once.
     // If given dependencies, useEffect is executed every time a value is changed.
 
@@ -128,6 +133,7 @@ export default function MovieListScreen() {
 
                 <div className="dashboard-table">
                     <h2>List movie winners by year</h2>
+                    <SearchByYear value={filterYear} onChange={setFilterYear}></SearchByYear>
                     <Table data={winnersData} table={tableSearch}></Table>
                 </div>
             </div>

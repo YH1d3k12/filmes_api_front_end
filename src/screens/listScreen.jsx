@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import Requester from "../data/requester.js";
 import Table from "../components/table.jsx";
 import NavigationButtons from "../components/navigation_buttons.jsx";
-import SearchByYear from "../utilities/searchByYear.js";
-import SearchByWinner from "../utilities/searchByWinner.js";
+import FilterByYear from "../components/filterByYear.jsx";
+import SearchByWinner from "../components/searchByWinner.jsx";
 
 import "./listScreen.css";
 
@@ -80,7 +80,7 @@ export default function ListScreen() {
         return (
             <div className="list-filter">
                 <p>Year</p>
-                <SearchByYear value={filterYear} onChange={setFilterYear} />
+                <FilterByYear value={filterYear} onChange={setFilterYear} />
             </div>
         )
     };
