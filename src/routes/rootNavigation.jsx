@@ -22,8 +22,8 @@ export default function RootNavigation() {
                       	The following components are child screens rendered within the Outlet of the Body component.
                       	These components represent specific views or sections of the application.
                     */}
-					<Route path="/" element={<ListScreen />} />
-					<Route path="/movies" element={<DashboardScreen />} />
+					<Route path="/" element={<DashboardScreen />} />
+					<Route path="/list" element={<ListScreen />} />
 				</Route>
 			</Routes>
 	  </BrowserRouter>
