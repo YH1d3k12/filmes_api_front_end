@@ -2,11 +2,14 @@ import React from "react";
 
 import "./navigationButtons.css";
 
+
 const NavigationButtons = ({
     currentPage,
     totalPages,
     handlePageChange
 }) => {
+
+
     const renderPageNumbers = () => {
         const pageNumbers = [];
 
@@ -43,6 +46,7 @@ const NavigationButtons = ({
         return pageNumbers;
     };
 
+
     return (
         <div className="navigation-button-container">
             <button onClick={
@@ -69,5 +73,6 @@ const NavigationButtons = ({
         </div>
     );
 }
+
 
 export default NavigationButtons;

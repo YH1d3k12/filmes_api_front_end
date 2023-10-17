@@ -6,14 +6,17 @@ const SearchByYear = ({ value, onChange }) => {
     const [filterYear, setFilterYear] = useState(value);
     const debouncedChange = useDebounce(onChange, 200);
 
+
     function handleChange(event) {
         setFilterYear(event.target.value);
     }
+
 
     function handleSearchButton(event) {
         debouncedChange(filterYear);
     }
 
+    
     return (
         <div className="search-container">
             <input

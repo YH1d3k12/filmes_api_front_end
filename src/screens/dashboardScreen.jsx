@@ -18,6 +18,8 @@ export default function MovieListScreen() {
 
     const fetchData = async () => {
         try {
+
+
             // gyd = Golden Years Data.
             const gyd = await Requester(
                 "get", `?projection=years-with-multiple-winners`, 
@@ -27,6 +29,7 @@ export default function MovieListScreen() {
                 }
             );
             setGoldenYearsData(gyd.years);
+
 
             // twd = Top Wins Data.
             const twd = await Requester(
@@ -38,6 +41,7 @@ export default function MovieListScreen() {
             );
             setTopWinsData(twd.studios.slice(0, 3));
 
+
             const intervalsData = await Requester(
                 "get", `?projection=max-min-win-interval-for-producers`, 
                 null,
@@ -47,6 +51,7 @@ export default function MovieListScreen() {
             );
             setMaxIntervalData(intervalsData.max);
             setMinIntervalData(intervalsData.min);
+
 
             const yearParam = filterYear ? `&year=${filterYear}` : "&year=1980"; 
             
@@ -66,6 +71,7 @@ export default function MovieListScreen() {
             throw new Error(error);
         }
     };
+
 
     const tableGoldenYears = [
         { heading: "Year", rowName: "year" },
@@ -97,9 +103,6 @@ export default function MovieListScreen() {
         { heading: "Title", rowName: "title" }
     ];
 
-    const handleSearchButton = () => {
-        
-    }
 
     // When the component is loaded useEffect is executed.
     useEffect(() => {
@@ -108,6 +111,7 @@ export default function MovieListScreen() {
     }, [filterYear]);
     // Second parameter of useEffect is a dependency list, if empty, the method is executed once.
     // If given dependencies, useEffect is executed every time a value is changed.
+
 
     return (
         <div className="dashboard-screen">
@@ -136,7 +140,6 @@ export default function MovieListScreen() {
                     <Table data={winnersData} table={tableSearch}></Table>
                 </div>
             </div>
-
         </div>
     );
 };

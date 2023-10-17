@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./aside.css"
 
-function Aside()
-{
+
+const Aside = () => {
     const navigate = useNavigate();
     
     return (
@@ -18,5 +18,6 @@ function Aside()
         </aside>
     );
 }
+
 
 export default Aside;

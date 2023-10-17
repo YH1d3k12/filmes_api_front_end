@@ -2,10 +2,12 @@ import React from "react";
 
 import "./table.css";
 
+
 const Table = ({ data, table }) => {
 
     // Renders table heading, takes in the object "item" with a heading property.
     const TableHeading = ({ item }) => <th>{item.heading}</th>
+
 
     // Renders table row, takes in the object "item" with a rowName property.
     const TableRow = ({ item, columns }) => (
@@ -29,6 +31,7 @@ const Table = ({ data, table }) => {
         </tr>
     )
 
+
     return (
         <table className="content-table">
             <thead>
@@ -42,5 +45,6 @@ const Table = ({ data, table }) => {
         </table>
     );
 };
+
 
 export default Table;
