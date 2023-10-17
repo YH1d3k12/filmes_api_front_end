@@ -26,6 +26,10 @@
     text-align: center;
 }
 
+.content-table th {
+    width: 25%;
+}
+
 .content-table th,
 .content-table td {
     font-size: 0.8rem;

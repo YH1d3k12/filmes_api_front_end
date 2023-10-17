@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from "react-router-dom";
 
-import Header from "../components/header";
+import Aside from "../components/aside";
 
 import "./body.css";
 
@@ -9,7 +9,7 @@ import "./body.css";
 export default function Body() {
     return (
         <div className="body">
-            <Header></Header>
+            <Aside></Aside>
             <Outlet />
         </div>
     );

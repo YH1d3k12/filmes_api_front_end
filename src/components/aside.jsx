@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import "./header.css"
+import "./aside.css"
 
-function Header()
+function Aside()
 {
     const navigate = useNavigate();
     
     return (
-        <header className="navigation-container">
+        <aside className="navigation-container">
             <navbar>
                 <ul>
                     <li><a onClick={() => navigate("/")}>Dashboard</a></li>
@@ -15,8 +15,8 @@ function Header()
                 </ul>
             </navbar>
             
-        </header>
+        </aside>
     );
 }
 
-export default Header;
+export default Aside;

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import Requester from "../data/requester.js";
-import Table from "../components/table.jsx";
+import Requester from '../data/requester.js';
+import Table from '../components/table.jsx';
 
-import "./listScreen.css";
-
+import './listScreen.css';
 
 export default function ListScreen() {
     // Defines movieData as an empty array.
@@ -23,37 +22,38 @@ export default function ListScreen() {
 
     const fetchData = async () => {
         try {
-            const data = await Requester("get", `?page=${currentPage}&size=15`, null, (response) => {
-                setTotalPages(response.data.totalPages)
+            const data = await Requester(
+                'get', `?page=${currentPage}&size=15`, null,
+                response => {
+                    setTotalPages(response.data.totalPages);
 
-                return response.data;
-            });
+                    return response.data;
+                }
+            );
 
-            console.log("Data", data)
+            console.log('Data', data);
 
             // Check if data.content is an array before setting the state.
             if (Array.isArray(data.content)) {
                 setMovieData(data.content);
-            } 
-            else {
-                console.error("Its not an array:", data);
+            } else {
+                console.error('Its not an array:', data);
             }
-        } 
-        catch (error) {
-            console.error("Error fetching data:", error);
+        } catch (error) {
+            console.error('Error fetching data:', error);
             throw new Error(error);
         }
-    }
+    };
 
-    const handlePageChange = (newPage) => {
+    const handlePageChange = newPage => {
         if (newPage >= 0 && newPage < totalPages) {
             setCurrentPage(newPage);
         } else if (newPage < 0) {
             // Goes to the first page if newPage is less than zero.
-            setCurrentPage(0); 
+            setCurrentPage(0);
         } else {
             // Goes to the last page if newPage is greater or equal than totalPages.
-            setCurrentPage(totalPages - 1); 
+            setCurrentPage(totalPages - 1);
         }
     };
 
@@ -63,7 +63,10 @@ export default function ListScreen() {
         const halfTotalPagesToShow = Math.floor(totalPagesToShow / 2);
 
         let startPage = Math.max(0, currentPage - halfTotalPagesToShow);
-        let endPage = Math.min(totalPages - 1, startPage + totalPagesToShow - 1);
+        let endPage = Math.min(
+            totalPages - 1,
+            startPage + totalPagesToShow - 1
+        );
 
         // If the current page is near the end, adjust the start and end
         if (endPage - startPage < totalPagesToShow - 1) {
@@ -72,7 +75,11 @@ export default function ListScreen() {
 
         for (let i = startPage; i <= endPage; i++) {
             pageNumbers.push(
-                <button key={i} onClick={() => handlePageChange(i)} className={i === currentPage ? 'active' : ''}>
+                <button
+                    key={i}
+                    onClick={() => handlePageChange(i)}
+                    className={i === currentPage ? 'active' : ''}
+                >
                     {i + 1}
                 </button>
             );
@@ -82,28 +89,62 @@ export default function ListScreen() {
     };
     const renderNavigationButtons = () => (
         <div className="dashboard-button-container">
-            <button onClick={() => handlePageChange(0)} disabled={currentPage === 0}>
-                {"<<"}
+            <button
+                onClick={() => handlePageChange(0)}
+                disabled={currentPage === 0}
+            >
+                {'<<'}
             </button>
-            <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 0}>
-                {"<"}
+            <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 0}
+            >
+                {'<'}
             </button>
             {renderPageNumbers()}
-            <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages - 1}>
-                {">"}
+            <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages - 1}
+            >
+                {'>'}
             </button>
-            <button onClick={() => handlePageChange(totalPages - 1)} disabled={currentPage === totalPages - 1}>
-                {">>"}
+            <button
+                onClick={() => handlePageChange(totalPages - 1)}
+                disabled={currentPage === totalPages - 1}
+            >
+                {'>>'}
             </button>
         </div>
     );
 
+    const CelYear = () => {
+        return (
+            <div>
+                <p>Year</p>
+                <input className="list-filter" placeholder="Filter by year"></input>
+            </div>
+        );
+    };
+
+    const CelWinner = () => {
+        return (
+            <div className="list-filter">
+                <p>Winner?</p>
+                <select className="list-filter">
+                    <option value="yes">Yes/No</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+        );
+    };
+
     // Defines the column headings and the values to be displayed.
     const table = [
-        { heading: "ID", rowName: "id"},
-        { heading: "Year", rowName: "year" },
-        { heading: "Title", rowName: "title" },
-        { heading: "Winner?", rowName: "winner"}
+        { heading: 'ID', rowName: 'id' },
+        { heading: <CelYear />, rowName: 'year' },
+        { heading: 'Title', rowName: 'title' },
+        { heading: <CelWinner />, rowName: 'winner' },
     ];
 
     return (
@@ -115,4 +156,4 @@ export default function ListScreen() {
             </div>
         </div>
     );
-};
+}
