@@ -110,7 +110,7 @@ export default function ListScreen() {
 
     return (
         <div className="list-screen">
-            <div className="list-screen-wrapper">
+            <div className="list-screen-table">
                 <h1>List Movies</h1>
                 <Table data={movieData} table={table}></Table>
                 {renderNavigationButtons()}

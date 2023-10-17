@@ -1,5 +1,5 @@
 :root {
-    --list-screen-wrapper-background-color: #d2d2d2;
+    --list-screen-table-background-color: #d2d2d2;
 
     --list-screen-button-container-background-color: #f4f4f4;
     --list-screen--buttons-container-border-color: #d2d2d2;
@@ -17,10 +17,29 @@
     padding: 20px;
 }
 
-.list-screen-wrapper {
+.list-screen-table {
     height: 100%;
     width: 100%;
     padding: 20px;
 
-    border: solid 1px var(--list-screen-wrapper-background-color);
+    border: solid 1px var(--list-screen-table-background-color);
+}
+
+.list-filter {
+    width: 100%;
+}
+
+.list-filter input {
+    padding: 8px 4px;
+    margin-top: 8px;
+    border-radius: 4px;
+    border: solid 1px var(--list-screen-table-background-color);
+}
+
+.list-filter select {
+    padding: 8px 4px;
+    margin-top: 8px;
+    border-radius: 4px;
+    border: solid 1px var(--list-screen-table-background-color);
+    text-align: center;
 }

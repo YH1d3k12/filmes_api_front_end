@@ -17,13 +17,12 @@ const SearchByYear = ({ value, onChange }) => {
     return (
         <div className="search-container">
             <input
-                className="list-filter"
-                placeholder="Filter by year"
+                placeholder="Searc by year"
                 type="number"
                 value={filterYear}
                 onChange={handleChange}
             />
-            <button onClick={handleSearchButton}>🔍</button>
+            <button onClick={handleSearchButton}>🔍︎</button>
         </div>
     )
 };

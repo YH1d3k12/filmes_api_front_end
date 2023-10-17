@@ -14,21 +14,10 @@
     padding: 12px;
 
     background-color: var(--list-screen-button-container-background-color);
+    cursor: pointer;
 }
 
 .navigation-button-container button:hover {
     background-color: var(--list-screen-button-hover-background-color);
     color: var(--list-screen-button-hover-color);
-}
-
-.list-filter {
-    width: 90%;
-    padding: 8px 4px;
-    margin-top: 8px;
-    border-radius: 4px;
-    background-color: var();
-}
-
-select {
-    text-align: center;
 }

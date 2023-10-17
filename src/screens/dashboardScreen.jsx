@@ -112,12 +112,12 @@ export default function MovieListScreen() {
     return (
         <div className="dashboard-screen">
             <div className="dashboard-wrapper">
-                <div className="dashboard-table">
+                <div className="dashboard-screen-table">
                     <h2>List years with multiple winners</h2>
                     <Table data={goldenYearsData} table={tableGoldenYears}></Table>
                 </div>
 
-                <div className="dashboard-table">
+                <div className="dashboard-screen-table">
                     <h2>Producers with longest and shortest interval between wins</h2>
                     <h3>Maximum</h3>
                     <Table data={maxIntervalData} table={tableMaxInterval}></Table>
@@ -126,17 +126,17 @@ export default function MovieListScreen() {
                 </div>
             </div>
             <div className="dashboard-wrapper">
-                <div className="dashboard-table">
+                <div className="dashboard-screen-table">
                     <h2>Top 3 studios with winners</h2>
                     <Table data={topWinsData} table={tableTopWins}></Table>
                 </div>
-
-                <div className="dashboard-table">
+                <div className="dashboard-screen-table">
                     <h2>List movie winners by year</h2>
                     <SearchByYear value={filterYear} onChange={setFilterYear}></SearchByYear>
                     <Table data={winnersData} table={tableSearch}></Table>
                 </div>
             </div>
+
         </div>
     );
 };
