@@ -24,38 +24,3 @@
 
     border: solid 1px var(--list-screen-wrapper-background-color);
 }
-
-.dashboard-button-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    border: solid 1px var(--list-screen--buttons-container-border-color);
-
-    background-color: var(--list-screen-button-container-background-color);
-}
-
-.dashboard-button-container button {
-    padding: 12px;
-
-    background-color: var(--list-screen-button-container-background-color);
-}
-
-.dashboard-button-container button:hover {
-    background-color: var(--list-screen-button-hover-background-color);
-    color: var(--list-screen-button-hover-color);
-}
-
-.list-filter {
-    width: 90%;
-    padding: 8px 4px;
-    margin-top: 8px;
-    border-radius: 4px;
-    background-color: var();
-}
-
-select {
-    text-align: center;
-}
