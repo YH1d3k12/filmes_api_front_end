@@ -1,12 +1,12 @@
-import React, { useDebugValue, useEffect, useState } from 'react';
+import React, { useDebugValue, useEffect, useState } from "react";
 
-import Requester from '../data/requester.js';
-import Table from '../components/table.jsx';
-import NavigationButtons from '../components/navigation_buttons.jsx';
-import SearchByYear from '../utilities/searchByYear.js';
-import SearchByWinner from '../utilities/searchByWinner.js';
+import Requester from "../data/requester.js";
+import Table from "../components/table.jsx";
+import NavigationButtons from "../components/navigation_buttons.jsx";
+import SearchByYear from "../utilities/searchByYear.js";
+import SearchByWinner from "../utilities/searchByWinner.js";
 
-import './listScreen.css';
+import "./listScreen.css";
 
 export default function ListScreen() {
     // Defines movieData as an empty array.
@@ -20,19 +20,19 @@ export default function ListScreen() {
     const fetchData = async () => {
         try {
             // Adds filterYear to endpoint if its not empty.
-            const yearParam = filterYear ? `&year=${filterYear}` : ''; 
+            const yearParam = filterYear ? `&year=${filterYear}` : ""; 
             
-            let winnerParam = '';
+            let winnerParam = "";
 
             // Checks the value of fliterWinner and adds it to the endpoint.
-            if (filterWinner === 'yes') {
-                winnerParam = '&winner=true';
-            } else if (filterWinner === 'no') {
-                winnerParam = '&winner=false';
+            if (filterWinner === "yes") {
+                winnerParam = "&winner=true";
+            } else if (filterWinner === "no") {
+                winnerParam = "&winner=false";
             }
 
             const data = await Requester(
-                'get', `?page=${currentPage}&size=15${winnerParam}${yearParam}`, 
+                "get", `?page=${currentPage}&size=15${winnerParam}${yearParam}`, 
                 null,
                 response => {
                     setTotalPages(response.data.totalPages);
@@ -44,17 +44,18 @@ export default function ListScreen() {
             if (Array.isArray(data.content)) {
                 setMovieData(data.content);
             } else {
-                console.error('Its not an array:', data);
+                console.error("Its not an array:", data);
             }
 
         } catch (error) {
-            console.error('Error fetching data:', error);
+            console.error("Error fetching data:", error);
             throw new Error(error);
         }
     };
 
-    const handlePageChange = newPage => {
+    const handlePageChange = (newPage) => {
         if (newPage >= 0 && newPage < totalPages) {
+            // If newPage is between 0 and totalPages, setCurrentPage to newPage.
             setCurrentPage(newPage);
         } else if (newPage < 0) {
             // Goes to the first page if newPage is less than zero.
@@ -65,6 +66,7 @@ export default function ListScreen() {
         }
     };
 
+    // Sends the currentPage and totalPages to the NavigationButtons component.
     const renderNavigationButtons = () => (
         <NavigationButtons
           currentPage={currentPage}
@@ -72,7 +74,7 @@ export default function ListScreen() {
           handlePageChange={handlePageChange}
         />
       );
-
+    
     const CelYear = () => {
         return (
             <div className="list-filter">
@@ -91,10 +93,10 @@ export default function ListScreen() {
 
     // Defines the column headings and the values to be displayed.
     const table = [
-        { heading: 'ID', rowName: 'id' },
-        { heading: <CelYear />, rowName: 'year' },
-        { heading: 'Title', rowName: 'title' },
-        { heading: <CelWinner />, rowName: 'winner' },
+        { heading: "ID", rowName: "id" },
+        { heading: <CelYear />, rowName: "year" },
+        { heading: "Title", rowName: "title" },
+        { heading: <CelWinner />, rowName: "winner" },
     ];
 
     // When the component is loaded useEffect is executed.
