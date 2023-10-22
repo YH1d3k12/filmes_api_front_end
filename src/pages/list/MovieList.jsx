@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import Requester from "../data/requester.js";
-import Table from "../components/table.jsx";
-import NavigationButtons from "../components/navigationButtons.jsx";
-import FilterByYear from "../components/filterByYear.jsx";
-import SearchByWinner from "../components/searchByWinner.jsx";
+import Requester from "../../data/requester.js";
+import Table from "../../components/tables/Table.jsx";
+import NavigationButtons from "../../components/ui/NavigationButtons.jsx";
+import FilterByYear from "./features/FilterByYear.jsx";
+import SearchByWinner from "./features/SearchByWinner.jsx";
 
-import "./listScreen.css";
+import "./movieList.css";
 
 
 export default function ListScreen() {

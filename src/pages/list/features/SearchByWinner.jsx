@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useDebounce from "./useDebounce"
+import useDebounce from "../../../utilities/UseDebounce.jsx"
 
 
 const SearchByWinner = ({ value, onChange }) => {

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import Requester from "../data/requester";
-import Table from "../components/table"
-import SearchByYear from "../components/searchByYear";
+import Requester from "../../data/requester.js";
+import Table from "../../components/tables/Table.jsx"
+import SearchByYear from "./features/SearchByYear.jsx";
 
-import "./dashboardScreen.css";
+import "./dashboard.css";
 
 
 export default function MovieListScreen() {
