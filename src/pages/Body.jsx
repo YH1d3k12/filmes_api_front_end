@@ -1,12 +1,12 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import Aside from "../components/aside";
+import Aside from "../components/ui/Aside.jsx";
 
-import "./body.css";
+import "../features/body/body.css";
 
 
-export default function Body() {
+const Body = () => {
     return (
         <div className="body">
             <Aside></Aside>
@@ -14,3 +14,6 @@ export default function Body() {
         </div>
     );
 };
+
+
+export default Body;

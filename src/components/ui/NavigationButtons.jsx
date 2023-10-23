@@ -9,7 +9,6 @@ const NavigationButtons = ({
     handlePageChange
 }) => {
 
-
     const renderPageNumbers = () => {
         const pageNumbers = [];
 
@@ -45,7 +44,6 @@ const NavigationButtons = ({
 
         return pageNumbers;
     };
-
 
     return (
         <div className="navigation-button-container">

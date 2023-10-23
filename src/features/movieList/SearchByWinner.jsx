@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useDebounce from "./useDebounce"
+import useDebounce from "../../utilities/UseDebounce.jsx"
 
 
 const SearchByWinner = ({ value, onChange }) => {
@@ -20,8 +20,8 @@ const SearchByWinner = ({ value, onChange }) => {
             onChange={handleChange}
         >
             <option value="">Yes/No</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
+            <option value="&winner=true">Yes</option>
+            <option value="&winner=false">No</option>
         </select>
     )
 };
