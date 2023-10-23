@@ -16,17 +16,17 @@ const Table = ({ data, table }) => {
                 Iterates through each element of columns array.
                 For each column within columns a table data element is created.
             */}
-            {columns.map((column, index) => {
+            {columns.map((column, cellIndex) => {
                 if(column.rowName.includes(".")){
                     const itemSplit = column.rowName.split(".")
-                    return <td>{item[itemSplit[0]] [itemSplit[1]]}</td>
+                    return <td key={cellIndex}>{item[itemSplit[0]] [itemSplit[1]]}</td>
                 };
 
                 if (typeof item[column.rowName] === "boolean") {
-                    return <td>{item[column.rowName] ? "Yes" : "No"}</td>;
+                    return <td key={cellIndex}>{item[column.rowName] ? "Yes" : "No"}</td>;
                 }
                 
-                return <td>{item[`${column.rowName}`]}</td>
+                return <td key={cellIndex}>{item[`${column.rowName}`]}</td>
             })}
         </tr>
     )
@@ -36,11 +36,11 @@ const Table = ({ data, table }) => {
         <table className="content-table">
             <thead>
                 <tr>
-                    {table.map((heading, index) => <TableHeading item={heading}/>)}
+                    {table.map((heading, index) => <TableHeading key={index} item={heading}/>)}
                 </tr>
             </thead>
             <tbody>
-                {data.map((rowData, index) => <TableRow item={rowData} columns={table}/>)}
+                {data.map((rowData, rowIndex) => <TableRow key={rowIndex} item={rowData} columns={table} />)}
             </tbody>
         </table>
     );
