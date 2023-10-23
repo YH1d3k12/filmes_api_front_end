@@ -1,9 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import Aside from "../../components/ui/Aside.jsx";
+import Aside from "../components/ui/Aside.jsx";
 
-import "./body.css";
+import "../features/body/body.css";
 
 
 export default function Body() {

@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Body from "../pages/body/Body.jsx";
-import MovieList from "../pages/list/MovieList.jsx";
-import Dashboard from "../pages/dashboard/Dashboard.jsx";
+import Body from "../pages/Body.jsx";
+import MovieList from "../pages/MovieList.jsx";
+import Dashboard from "../pages/Dashboard.jsx";
 
 
 /**
