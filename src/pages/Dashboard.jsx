@@ -10,7 +10,7 @@ import SearchByYear from "../features/dashboard/SearchByYear.jsx";
 import "../features/dashboard/dashboard.css";
 
 
-export default function MovieListScreen() {
+const Dashboard = () =>{
     const [filterYear, setFilterYear] = useState("");
     
     return (
@@ -42,3 +42,6 @@ export default function MovieListScreen() {
         </div>
     );
 };
+
+
+export default Dashboard;
