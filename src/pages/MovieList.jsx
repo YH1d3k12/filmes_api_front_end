@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 
 import TableMovieList from "../features/movieList/components/TableMovieList.jsx";
 import PaginationButtons from "../components/ui/PaginationButtons.jsx";
@@ -17,11 +17,19 @@ const MovieList = () => {
         } else if (newPage < 0) {
             // Goes to the first page if newPage is less than zero.
             setCurrentPage(0);
-        } else {
+        } else if (newPage >= totalPages) {
             // Goes to the last page if newPage is greater or equal than totalPages.
             setCurrentPage(totalPages - 1);
         }
     };
+
+    // useEffect is used to monitor changes in totalPages.
+    useEffect(() => {
+        if (currentPage > totalPages) {
+            // If currentPage is greater than totalPages, set it to the last page.
+            setCurrentPage(totalPages - 1);
+        }
+    }, [totalPages, currentPage]);
 
     return (
         <div className="list-screen">
