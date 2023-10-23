@@ -14,27 +14,27 @@ const TableMultipleWinners = () => {
         { heading: "Win Count", rowName: "winnerCount" }
     ];
 
-    // Fetch data from the API.
-    const fetchData = async () => {
-        try {
-            const data = await Requester(
-                "get", `?projection=years-with-multiple-winners`, 
-                null,
-                response => {
-                    return response.data;
-                }
-            );
-
-            // Update the state with the data fetched from the API.
-            setMultipleWinnersData(data.years);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            throw new Error(error);
-        }
-    }
-
     // Calls fetchData when the component is mounted.
     useEffect(() => {
+        // Fetch data from the API.
+        const fetchData = async () => {
+            try {
+                const data = await Requester(
+                    "get", `?projection=years-with-multiple-winners`, 
+                    null,
+                    response => {
+                        return response.data;
+                    }
+                );
+    
+                // Update the state with the data fetched from the API.
+                setMultipleWinnersData(data.years);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                throw new Error(error);
+            }
+        }
+
         fetchData();
     }, []);
 

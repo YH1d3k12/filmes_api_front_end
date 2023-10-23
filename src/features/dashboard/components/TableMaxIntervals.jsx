@@ -16,27 +16,27 @@ const TableMaxIntervals = () => {
         { heading: "Following Year", rowName: "followingWin" }
     ];
 
-    // Fetch data from the API.
-    const fetchData = async () => {
-        try {
-            const data = await Requester(
-                "get", `?projection=max-min-win-interval-for-producers`, 
-                null,
-                response => {
-                    return response.data;
-                }
-            );
-
-            // Update the state with the data fetched from the API.
-            setMaxIntervalData(data.max);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            throw new Error(error);
-        }
-    }
-
     // Calls fetchData when the component is mounted.
     useEffect(() => {
+        // Fetch data from the API.
+        const fetchData = async () => {
+            try {
+                const data = await Requester(
+                    "get", `?projection=max-min-win-interval-for-producers`, 
+                    null,
+                    response => {
+                        return response.data;
+                    }
+                );
+    
+                // Update the state with the data fetched from the API.
+                setMaxIntervalData(data.max);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                throw new Error(error);
+            }
+        }
+
         fetchData();
     }, []);
 

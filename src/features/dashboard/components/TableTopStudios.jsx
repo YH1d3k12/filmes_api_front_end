@@ -14,28 +14,28 @@ const TableTopStudios = () => {
         { heading: "Win Count", rowName: "winCount" }
     ];
 
-    // Fetch data from the API.
-    const fetchData = async () => {
-        try {
-            const data = await Requester(
-                "get", `?projection=studios-with-win-count`, 
-                null,
-                response => {
-                    return response.data;
-                }
-            );
-
-            // Update the state with the data fetched from the API.
-            // First argument of slice is the starting index, second argument is the ending index.
-            setTopStudiosData(data.studios.slice(0, 3));
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            throw new Error(error);
-        }
-    }
-
     // Calls fetchData when the component is mounted.
     useEffect(() => {
+        // Fetch data from the API.
+        const fetchData = async () => {
+            try {
+                const data = await Requester(
+                    "get", `?projection=studios-with-win-count`, 
+                    null,
+                    response => {
+                        return response.data;
+                    }
+                );
+    
+                // Update the state with the data fetched from the API.
+                // First argument of slice is the starting index, second argument is the ending index.
+                setTopStudiosData(data.studios.slice(0, 3));
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                throw new Error(error);
+            }
+        }
+
         fetchData();
     }, []);
 
