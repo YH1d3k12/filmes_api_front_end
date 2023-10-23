@@ -42,5 +42,10 @@
     },
     "devDependencies": {
         "gh-pages": "^6.0.0"
+    },
+    "jest": {
+        "transformIgnorePatterns": [
+            "node_modules/(?!axios)/"
+        ]
     }
 }
