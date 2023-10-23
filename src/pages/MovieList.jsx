@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 import TableMovieList from "../features/movieList/components/TableMovieList.jsx";
-import NavigationButtons from "../components/ui/NavigationButtons.jsx";
+import PaginationButtons from "../components/ui/PaginationButtons.jsx";
 
 import "../features/movieList/movieList.css"
 
@@ -29,12 +29,12 @@ const MovieList = () => {
                 <h1>List Movies</h1>
                 <TableMovieList 
                     currentPage={currentPage}
-                    setTotalPages={setTotalPages}
+                    setTotalPages={setTotalPages} // Receives the setTotalPages function.
                 />
-                <NavigationButtons
+                <PaginationButtons
                     currentPage={currentPage}
                     totalPages={totalPages}
-                    handlePageChange={handlePageChange}
+                    handlePageChange={handlePageChange} // Receives the handlePageChange function.
                 />
             </div>
         </div>

@@ -1,4 +1,4 @@
-.navigation-button-container {
+.pagination-button-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -10,14 +10,14 @@
     background-color: var(--list-screen-button-container-background-color);
 }
 
-.navigation-button-container button {
+.pagination-button-container button {
     padding: 12px;
 
     background-color: var(--list-screen-button-container-background-color);
     cursor: pointer;
 }
 
-.navigation-button-container button:hover {
+.pagination-button-container button:hover {
     background-color: var(--list-screen-button-hover-background-color);
     color: var(--list-screen-button-hover-color);
 }
