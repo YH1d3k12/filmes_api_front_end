@@ -43,3 +43,10 @@ Certifique-se de estar na raiz do projeto com todas as dependências instaladas.
 ###### Iniciar a aplicação
 ```
 npm start
+```
+
+###### Iniciar testes
+```
+npm test
+```
+selecione `a` no terminal para executar todos os testes.
