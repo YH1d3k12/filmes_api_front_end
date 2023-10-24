@@ -6,13 +6,11 @@ const SearchByWinner = ({ value, onChange }) => {
     const [filterWinner, setFilterWinner] = useState(value);
     const debouncedChange = useDebounce(onChange, 500);
 
-
     function handleChange(event) {
         setFilterWinner(event.target.value);
         debouncedChange(event.target.value);
     }
 
-    
     return (
         <select
             className="list-filter"
