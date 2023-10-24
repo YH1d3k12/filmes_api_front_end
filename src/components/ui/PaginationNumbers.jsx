@@ -6,27 +6,27 @@ const PaginationNumbers = ({
     totalPages,
     handlePageChange
 }) => {
+    // This array will store the page numbers to be showed.
     const pageNumbers = [];
-
+    // Defines the number of pages to be showed.
     const totalPagesToShow = 5;
-    // The number of pages to show on each side of the current page.
+    // Is use to define the number of pages around the current page.
     const halfTotalPagesToShow = Math.floor(totalPagesToShow / 2);
 
-    // Guarantees that startPage is never less than 0.
+    // Calculates the starting page, the value can never be less than 0.
     let startPage = Math.max(0, currentPage - halfTotalPagesToShow);
 
-    // Guarantees that endPage is never greater than totalPages.
-    let endPage = Math.min(
-        totalPages - 1,
-        startPage + totalPagesToShow - 1
-    );
+    // Calculates the ending page, the value can never be greater than totalPages.
+    // Minus 1 because we are working with indexes of an array.
+    let endPage = Math.min(totalPages, startPage + totalPagesToShow) - 1;
 
-    // If true there aren't enought spaces to render.
+    // Guarantees that the number of pages to be showed is at least one.
     if (endPage - startPage < totalPagesToShow - 1) {
         startPage = Math.max(0, endPage - totalPagesToShow + 1);
     }
 
     for (let i = startPage; i <= endPage; i++) {
+        // Pushes the page number to the array.
         pageNumbers.push(
             <button
                 key={i}

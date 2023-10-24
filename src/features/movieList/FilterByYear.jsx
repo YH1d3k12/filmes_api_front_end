@@ -6,13 +6,11 @@ const FilterByYear = ({ value, onChange }) => {
     const [filterYear, setFilterYear] = useState(value);
     const debouncedChange = useDebounce(onChange, 500);
 
-
     function handleChange(event) {
         setFilterYear(event.target.value);
         debouncedChange(event.target.value);
     }
     
-
     return (
         <input
             className="list-filter"
