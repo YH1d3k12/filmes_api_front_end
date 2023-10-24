@@ -11,8 +11,10 @@ describe("Dashboard", () => {
             </BrowserRouter>
         );
 
-        expect(screen.getByText("Dashboard")).toBeInTheDocument(
-            "List years with multiple winners"
-        );
+        // Checks if titles are present in the document.
+        expect(screen.getByText("List years with multiple winners")).toBeInTheDocument();
+        expect(screen.getByText("Producers with longest and shortest interval between wins")).toBeInTheDocument();
+        expect(screen.getByText("Top 3 studios with winners")).toBeInTheDocument();
+        expect(screen.getByText("List movie winners by year")).toBeInTheDocument();
     });
 });
