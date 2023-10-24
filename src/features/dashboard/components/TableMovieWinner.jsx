@@ -33,7 +33,6 @@ const TableMovieWinner = ({value}) => {
                     }
                 );
                 
-                console.log("Executed Table Render")
                 // Update the state with the data fetched from the API.
                 setMovieWinnerData(data);
             } catch (error) {

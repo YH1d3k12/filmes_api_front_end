@@ -1,11 +1,11 @@
 import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import SearchByYear from "../SearchByYear";
+import FilterByYear from "../FilterByYear.jsx";
 import "@testing-library/jest-dom"
 
 
-describe("SearchByYear", () => {
-    it("Should call mocked function with the input value when button is pressed", () => {
+describe("FilterByYear", () => {
+    it("Should update input value", () => {
         // Fakes the passage of time.
         jest.useFakeTimers();
 
@@ -14,28 +14,23 @@ describe("SearchByYear", () => {
         const value = "";
 
         // Renders component.
-        render(<SearchByYear value={value} onChange={onChangeMock} />);
+        render(<FilterByYear value={value} onChange={onChangeMock} />);
 
         // Get input element through placeholder text.
-        const input = screen.getByPlaceholderText("Search by year");
-        // Get button element through id.
-        const button = screen.getByTestId("search-button");
+        const input = screen.getByPlaceholderText("Filter by year");
 
         // State changes should be within an act() callback.
         // To avoid synchronization issues.
         act(() => {
             // Simulate user typing.
-            userEvent.type(input, "1980");
-
-            // Simulate user clicking.
-            userEvent.click(button);
+            userEvent.type(input, "2011");
         });
 
         // Executes all functions with timers immediately.
         jest.runAllTimers();
 
         // Desired results.
-        expect(input).toHaveValue(1980);
-        expect(onChangeMock).toHaveBeenCalledWith("1980");
+        expect(input).toHaveValue(2011);
+        expect(onChangeMock).toHaveBeenCalledWith("2011");
     });
 });
