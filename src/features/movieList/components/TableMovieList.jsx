@@ -7,7 +7,6 @@ import SearchByWinner from "../SearchByWinner.jsx";
 
 
 const TableMovieList = ({currentPage, setTotalPages}) => {
-    console.log("Redenred table movie list")
     // State which stores the data to be displayed in the table.
     const [movieData, setMovieData] = useState([]);
     const [filterYear, setFilterYear] = useState("");
