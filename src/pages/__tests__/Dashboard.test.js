@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Dashboard from "../Dashboard";
+import "@testing-library/jest-dom"
 
 
 describe("Dashboard", () => {
